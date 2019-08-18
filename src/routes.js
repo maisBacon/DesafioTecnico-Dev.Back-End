@@ -1,14 +1,11 @@
 const express = require("express");
 const routes = express.Router();
-const SearchPlanetsController = require("./controllers/SearchPlanetController");
-const RegisterPlanetsController = require("./controllers/RegisterPlanetController.js");
-const ListPlanetsController = require("./controllers/ListPlanetController");
-const DeletePlanetController = require("./controllers/DeletePlanetController");
+const PlanetController = require("./controllers/PlanetController");
 
-routes.post("/planet", RegisterPlanetsController.Register);
-routes.get("/planet/name", SearchPlanetsController.SearchName);
-routes.get("/planet/id", SearchPlanetsController.SearchId);
-routes.get("/planet/list", ListPlanetsController.List);
-routes.delete("/planet/delete", DeletePlanetController.Delete);
+routes.post("/planet", PlanetController.Register);
+routes.get("/planet/name", PlanetController.SearchName);
+routes.get("/planet/id", PlanetController.SearchId);
+routes.get("/planet/list", PlanetController.List);
+routes.delete("/planet/delete", PlanetController.Delete);
 
 module.exports = routes;
